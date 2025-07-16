@@ -1,19 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
 
+import '../data/data.dart';
+
 class HomeWidget extends StatelessWidget {
   const HomeWidget({super.key});
 
-  Future<List<dynamic>> fetchProducts() async {
-    final dio = Dio();
-    final response = await dio.get("https://fakestoreapi.com/products/category/jewelery");
 
-    if (response.statusCode == 200) {
-      return response.data;
-    } else {
-      throw Exception("Error while loading");
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
